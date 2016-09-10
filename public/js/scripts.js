@@ -100,8 +100,6 @@ var ActivationPage = React.createClass({
         var newState = (state == 'enabled') ? 'disabled' : 'enabled';
 
         localStorage.setItem('add-ons', newState);
-
-        // this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
         // this.setState({data: comments});
@@ -124,6 +122,8 @@ var ActivationPage = React.createClass({
   componentDidMount: function() {
     this.loadInstallsNumber();
     this.checkLocalStorage();
+
+    setInterval(this.loadInstallsNumber, this.props.pollInterval);
   },
   render: function() {
     return (
@@ -139,6 +139,6 @@ var ActivationPage = React.createClass({
 });
 
 ReactDOM.render(
-  <ActivationPage url="/api/installs" />,
+  <ActivationPage url="/api/installs" pollInterval={2000} />,
   document.getElementById('main')
 );
