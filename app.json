@@ -1,0 +1,11 @@
+{
+  "name": "Add-ons Activation",
+  "description": "Enable users to install a collection of add-ons",
+  "keywords": [ "add-ons", "reactjs" ],
+  "repository": "https://github.com/dothanhdatvu/ento-test",
+  "website": "https://github.com/dothanhdatvu",
+  "success_url": "/",
+  "env" : {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+  }
+}

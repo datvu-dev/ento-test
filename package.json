@@ -1,0 +1,31 @@
+{
+  "name": "addons-activation",
+  "version": "0.0.0",
+  "private": true,
+  "license": "see LICENSE file",
+  "description": "Enable users to install a collection of add-ons",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dothanhdatvu/ento-test"
+  },
+  "keywords": [
+    "react",
+    "add-ons",
+    "enabler"
+  ],
+  "author": "datvu",
+  "homepage": "https://github.com/dothanhdatvu",
+  "engines" : {
+    "node" : "0.12.x"
+  }
+}
