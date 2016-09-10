@@ -42,14 +42,24 @@ app.post('/api/installs', function(req, res) {
     }
 
     var installs = JSON.parse(data);
+    var newInstalls = [];
 
-    var newInstall = {
-      id: Date.now()
-    };
+    if (req.body.state == 'enabled') {
+      for (var key in installs) {
+        if (installs[key].id != req.body.id) {
+          newInstalls.push(installs[key]);
+        }
+      }
+    }
+    else {
+      newInstalls = installs;
 
-    installs.push(newInstall);
+      newInstalls.push({
+        id: req.body.id
+      });
+    }
 
-    fs.writeFile(INSTALLS_FILE, JSON.stringify(installs, null, 4), function(err) {
+    fs.writeFile(INSTALLS_FILE, JSON.stringify(newInstalls, null, 4), function(err) {
       if (err) {
         console.error(err);
       }
