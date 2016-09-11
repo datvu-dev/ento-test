@@ -8,6 +8,15 @@ var AdText = React.createClass({
     );
   }
 });
+var CheckMark = React.createClass({
+  render: function() {
+    return (
+      <div className="check-mark-wrap">
+        <div className="check-mark"></div>
+      </div>
+    );
+  }
+});
 var Description = React.createClass({
   render: function() {
     return (
@@ -135,6 +144,7 @@ var App = React.createClass({
       <div>
         <div id="add-ons" className={this.state.addonState}>
           <Heading />
+          <CheckMark />
           <Description />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>

@@ -62,6 +62,7 @@ var App = React.createClass({
       <div>
         <div id="add-ons" className={this.state.addonState}>
           <Heading />
+          <CheckMark />
           <Description />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>

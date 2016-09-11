@@ -1,0 +1,52 @@
+.check-mark-wrap {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+
+  border-radius: 50%;
+
+  .enabled & {
+    border: 1px solid #eee;
+  }
+
+  .disabled & {
+    border: 1px solid #00C6E2;
+  }
+}
+
+.check-mark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+
+  .enabled & {
+    border: 2px solid #eee;
+  }
+
+  .disabled & {
+    border: 2px solid #00C6E2;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 8px;
+    transform: rotate(45deg);
+    position: relative;
+    left: 6px;
+    top: 3px;
+
+    .enabled & {
+      border: solid #eee;
+      border-width: 0 2px 2px 0;
+    }
+
+    .disabled & {
+      border: solid #00C6E2;
+      border-width: 0 2px 2px 0;
+    }
+  }
+}
