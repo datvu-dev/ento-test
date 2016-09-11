@@ -34,7 +34,7 @@ var Divider = React.createClass({
     );
   }
 });
-var Heading = React.createClass({
+var Title = React.createClass({
   render: function() {
     return (
       <h1>
@@ -143,7 +143,7 @@ var App = React.createClass({
     return (
       <div>
         <div id="add-ons" className={this.state.addonState}>
-          <Heading />
+          <Title />
           <CheckMark />
           <Description />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />

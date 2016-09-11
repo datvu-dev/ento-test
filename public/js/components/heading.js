@@ -1,4 +1,4 @@
-var Heading = React.createClass({
+var Title = React.createClass({
   render: function() {
     return (
       <h1>
