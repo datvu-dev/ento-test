@@ -74,9 +74,13 @@ h4 {
   line-height: 20px;
 }
 #counter {
+  color: #b7b7b7;
   position: absolute;
   top: 19px;
   right: 20px;
+}
+#counter span {
+  margin-right: 10px;
 }
 .switch {
   position: relative;
