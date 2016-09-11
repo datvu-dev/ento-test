@@ -19,6 +19,13 @@ var Description = React.createClass({
     );
   }
 });
+var Divider = React.createClass({
+  render: function() {
+    return (
+      <div className="divider"></div>
+    );
+  }
+});
 var Heading = React.createClass({
   render: function() {
     return (
@@ -131,6 +138,7 @@ var App = React.createClass({
           <Description />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>
+        <Divider />
         <InstallCounter data={this.state.data} />
         <AdText />
       </div>

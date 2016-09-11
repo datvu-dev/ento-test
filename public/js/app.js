@@ -65,6 +65,7 @@ var App = React.createClass({
           <Description />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>
+        <Divider />
         <InstallCounter data={this.state.data} />
         <AdText />
       </div>
