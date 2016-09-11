@@ -61,7 +61,7 @@
 #counter {
   color: #b7b7b7;
   position: absolute;
-  top: 19px;
+  top: 29px;
   right: 20px;
 }
 #counter span {
@@ -130,12 +130,13 @@ body {
 h3 {
   font-size: 22px;
   font-family: 'font-semibold';
+  margin-top: 40px;
 }
 h4 {
-  font-size: 15px;
+  font-size: 14px;
   font-family: 'font-semibold';
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 10px;
 }
 
 #installs-number {
@@ -153,6 +154,8 @@ h4 {
   display: inline-block;
   width: 280px;
   height: 45px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 .switch input {
   display: none;
