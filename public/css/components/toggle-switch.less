@@ -16,8 +16,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f5f5f5;
-  box-shadow: inset 1px 1px 7px #e8e8e8;
+  background-color: lighten(@light-grey, 3%);
+  box-shadow: inset 1px 1px 7px darken(@light-grey, 3%);
   border-radius: 35px;
   -webkit-transition: .4s;
   transition: .4s;
@@ -40,8 +40,8 @@
 }
 
 input:checked + .slider {
-  background-color: #00BCD6;
-  box-shadow: inset 1px 1px 7px #17b4ca;
+  background-color: darken(@blue, 3%);
+  box-shadow: inset 1px 1px 7px darken(@blue, 5%);
 }
 
 input:checked + .slider:before {
@@ -52,13 +52,13 @@ input:checked + .slider:before {
 
 input + .slider:before {
   content: "enable";
-  color: #fff;
+  color: @white;
   background-color: @blue;
 }
 
 input:checked + .slider:before {
   content: "enabled";
-  color: #000;
+  color: @black;
   font-family: 'font-bold';
   background-color: @light-grey;
 }
