@@ -54,6 +54,8 @@ var App = React.createClass({
   componentDidMount: function() {
     this.loadInstallsNumber();
     this.checkLocalStorage();
+
+    setInterval(this.loadInstallsNumber, this.props.pollInterval);
   },
   render: function() {
     return (
@@ -71,6 +73,6 @@ var App = React.createClass({
 });
 
 ReactDOM.render(
-  <App url="/api/installs" />,
+  <App url="/api/installs" pollInterval={1000} />,
   document.getElementById('main')
 );
