@@ -28,8 +28,14 @@ body {
   }
 }
 h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-family: 'font-semibold';
+}
+h4 {
+  font-size: 15px;
+  font-family: 'font-semibold';
+  text-transform: uppercase;
+  margin: 0;
 }
 .divider {
   overflow: hidden;
@@ -57,6 +63,20 @@ h3 {
 #add-ons.enabled {
   background: #00C6E2;
   color: #eee;
+}
+#installs-number {
+  padding: 20px;
+  position: relative;
+}
+#installs-number p {
+  color: #b7b7b7;
+  font-size: 13px;
+  line-height: 20px;
+}
+#counter {
+  position: absolute;
+  top: 19px;
+  right: 20px;
 }
 .switch {
   position: relative;
