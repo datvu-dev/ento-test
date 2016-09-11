@@ -52,7 +52,6 @@ h2 {
   font-family: 'font-semibold';
   font-weight: normal;
   text-transform: uppercase;
-  margin-top: 10px;
 }
 .divider {
   overflow: hidden;
@@ -131,17 +130,19 @@ h2 {
 #installs-number {
   padding: 20px;
   position: relative;
+  margin-top: 5px;
 }
 #installs-number p {
   color: #b7b7b7;
   font-size: 13px;
   line-height: 20px;
+  margin-top: 20px;
 }
 #counter {
   color: #b7b7b7;
   font-size: 17px;
   position: absolute;
-  top: 28px;
+  top: 30px;
   right: 20px;
 }
 #counter span {
