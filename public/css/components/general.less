@@ -6,13 +6,22 @@ body {
 
 #main {
   background: #fff;
+  position: fixed;
+}
 
+@media (max-width: 349px) {
+  #main {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 }
 
 @media (min-width: 350px) {
   #main {
-    width: 320px;
-    position: fixed;
+    width: 340px;
+    height: auto;
     border-radius: 5px;
     /* put element at center of page */
     top: 50%;
