@@ -6,15 +6,20 @@ body {
 
 #main {
   background: #fff;
+
 }
 
-#main {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 400px) {
+@media (min-width: 350px) {
   #main {
-    width: 350px;
+    width: 320px;
+    position: fixed;
+    border-radius: 5px;
+    /* put element at center of page */
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 }
