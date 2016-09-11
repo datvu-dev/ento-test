@@ -1,9 +1,11 @@
-var Heading = React.createClass({
+var AdText = React.createClass({
   render: function() {
     return (
-      <h3>
-        Add-ons
-      </h3>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+      </p>
     );
   }
 });
@@ -15,6 +17,29 @@ var Description = React.createClass({
         A collection of add-ons to superchange your account such as Dropbox,
         Google Drive + more.
       </p>
+    );
+  }
+});
+
+var Heading = React.createClass({
+  render: function() {
+    return (
+      <h3>
+        Add-ons
+      </h3>
+    );
+  }
+});
+
+var InstallCounter = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h4>Number of installs</h4>
+        <div id="counter">
+          <span>{this.props.data}</span>
+        </div>
+      </div>
     );
   }
 });
@@ -44,32 +69,7 @@ var ToggleSwitch = React.createClass({
   }
 });
 
-var InstallCounter = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h4>Number of installs</h4>
-        <div id="counter">
-          <span>{this.props.data}</span>
-        </div>
-      </div>
-    );
-  }
-});
-
-var AdText = React.createClass({
-  render: function() {
-    return (
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-        veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </p>
-    );
-  }
-});
-
-var ActivationPage = React.createClass({
+var App = React.createClass({
   loadInstallsNumber: function() {
     $.ajax({
       url: this.props.url,
@@ -139,6 +139,6 @@ var ActivationPage = React.createClass({
 });
 
 ReactDOM.render(
-  <ActivationPage url="/api/installs" />,
+  <App url="/api/installs" />,
   document.getElementById('main')
 );
