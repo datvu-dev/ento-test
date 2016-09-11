@@ -9,7 +9,6 @@ var AdText = React.createClass({
     );
   }
 });
-
 var Description = React.createClass({
   render: function() {
     return (
@@ -20,7 +19,6 @@ var Description = React.createClass({
     );
   }
 });
-
 var Heading = React.createClass({
   render: function() {
     return (
@@ -30,7 +28,6 @@ var Heading = React.createClass({
     );
   }
 });
-
 var InstallCounter = React.createClass({
   render: function() {
     return (
@@ -43,7 +40,6 @@ var InstallCounter = React.createClass({
     );
   }
 });
-
 var ToggleSwitch = React.createClass({
   handleToggle: function() {
     this.props.handleUpdate();
@@ -68,7 +64,6 @@ var ToggleSwitch = React.createClass({
     );
   }
 });
-
 var App = React.createClass({
   loadInstallsNumber: function() {
     $.ajax({
@@ -101,10 +96,9 @@ var App = React.createClass({
 
         localStorage.setItem('add-ons', newState);
 
-        // this.setState({data: data});
+        this.setState({addonState: localStorage.getItem('add-ons')});
       }.bind(this),
       error: function(xhr, status, err) {
-        // this.setState({data: comments});
         console.error(this.props.route.url, status, err.toString());
       }.bind(this)
     });
@@ -113,6 +107,8 @@ var App = React.createClass({
     if (!localStorage.getItem('add-ons')) {
       localStorage.setItem('add-ons', 'disabled');
     }
+
+    this.setState({addonState: localStorage.getItem('add-ons')});
 
     if (!localStorage.getItem('time')) {
       localStorage.setItem('time', Date.now());
@@ -128,9 +124,11 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <Heading />
-        <Description />
-        <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
+        <div id="add-ons" className={this.state.addonState}>
+          <Heading />
+          <Description />
+          <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
+        </div>
         <InstallCounter data={this.state.data} />
         <AdText />
       </div>
