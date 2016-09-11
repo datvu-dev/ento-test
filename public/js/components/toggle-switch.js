@@ -16,7 +16,7 @@ var ToggleSwitch = React.createClass({
       <div>
         <label className="switch">
           <input type="checkbox" onChange={this.handleToggle} defaultChecked={this.state.checked} />
-          <div className="slider round"></div>
+          <div className="slider"></div>
         </label>
       </div>
     );

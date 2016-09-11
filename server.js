@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {
-    // Set permissive CORS header - this allows this server to be used only as an API server.
+    // Set permissive CORS header - this allows this server to be used only as
+    // an API server.
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Disable caching so we'll always get the latest number of installs.

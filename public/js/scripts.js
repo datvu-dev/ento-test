@@ -74,26 +74,32 @@ var ToggleSwitch = React.createClass({
       <div>
         <label className="switch">
           <input type="checkbox" onChange={this.handleToggle} defaultChecked={this.state.checked} />
-          <div className="slider round"></div>
+          <div className="slider"></div>
         </label>
       </div>
     );
   }
 });
 var App = React.createClass({
+  /*
+   ** Get the latest number of installs.
+  */
   loadInstallsNumber: function() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({data: data.length});
+        this.setState({data: data.length}); // assign data.
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
   },
+  /*
+   ** Update the number of installs.
+  */
   updateInstallsNumber: function() {
     var id = localStorage.getItem('time').toString();
     var state = localStorage.getItem('add-ons');
@@ -110,8 +116,8 @@ var App = React.createClass({
       success: function(data) {
         var newState = (state == 'enabled') ? 'disabled' : 'enabled';
 
+        // update the state of installation of add-ons.
         localStorage.setItem('add-ons', newState);
-
         this.setState({addonState: localStorage.getItem('add-ons')});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -119,16 +125,21 @@ var App = React.createClass({
       }.bind(this)
     });
   },
+  /*
+   ** Check local storage and assign new value if they are empty.
+  */
   checkLocalStorage: function() {
+    // this indicates whether add-ons are installed.
     if (!localStorage.getItem('add-ons')) {
       localStorage.setItem('add-ons', 'disabled');
     }
 
-    this.setState({addonState: localStorage.getItem('add-ons')});
-
+    // this serves as a unique id for each browser.
     if (!localStorage.getItem('time')) {
       localStorage.setItem('time', Date.now());
     }
+
+    this.setState({addonState: localStorage.getItem('add-ons')});
   },
   getInitialState: function() {
     return {data: []};
@@ -137,6 +148,7 @@ var App = React.createClass({
     this.loadInstallsNumber();
     this.checkLocalStorage();
 
+    // load number of installs every second.
     setInterval(this.loadInstallsNumber, this.props.pollInterval);
   },
   render: function() {
