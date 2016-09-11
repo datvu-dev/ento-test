@@ -1,9 +1,9 @@
 var Heading = React.createClass({
   render: function() {
     return (
-      <h3>
+      <h1>
         Add-ons
-      </h3>
+      </h1>
     );
   }
 });
