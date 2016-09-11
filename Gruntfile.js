@@ -13,6 +13,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       scripts: {
+        options: {
+          separator: ''
+        },
         src: [
           'public/js/components/*.js',
           'public/js/app.js',
@@ -23,14 +26,14 @@ module.exports = function(grunt) {
     less: {
       style: {
         files: {
-          "public/css/styles.css": "css/styles.less"
+          "public/css/styles.css": "public/css/styles.less"
         }
       }
     },
     watch: {
       js: {
         files: ['public/js/app.js', 'public/js/components/*.js'],
-        tasks: ['concat:app'],
+        tasks: ['concat:scripts'],
         options: {
           livereload: true,
         }
