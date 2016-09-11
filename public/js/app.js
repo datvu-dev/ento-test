@@ -30,10 +30,9 @@ var App = React.createClass({
 
         localStorage.setItem('add-ons', newState);
 
-        // this.setState({data: data});
+        this.setState({addonState: localStorage.getItem('add-ons')});
       }.bind(this),
       error: function(xhr, status, err) {
-        // this.setState({data: comments});
         console.error(this.props.route.url, status, err.toString());
       }.bind(this)
     });
@@ -42,6 +41,8 @@ var App = React.createClass({
     if (!localStorage.getItem('add-ons')) {
       localStorage.setItem('add-ons', 'disabled');
     }
+
+    this.setState({addonState: localStorage.getItem('add-ons')});
 
     if (!localStorage.getItem('time')) {
       localStorage.setItem('time', Date.now());
@@ -57,9 +58,11 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <Heading />
-        <Description />
-        <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
+        <div id="add-ons" className={this.state.addonState}>
+          <Heading />
+          <Description />
+          <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
+        </div>
         <InstallCounter data={this.state.data} />
         <AdText />
       </div>
