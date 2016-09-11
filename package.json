@@ -1,17 +1,19 @@
 {
   "name": "addons-activation",
   "version": "0.0.0",
-  "private": true,
-  "license": "see LICENSE file",
   "description": "Enable users to install a collection of add-ons",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.4.3",
     "express": "^4.4.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -25,7 +27,7 @@
   ],
   "author": "datvu",
   "homepage": "https://github.com/dothanhdatvu",
-  "engines" : {
-    "node" : "0.12.x"
+  "engines": {
+    "node": "0.12.x"
   }
 }
