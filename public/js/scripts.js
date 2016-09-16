@@ -1,13 +1,3 @@
-var AdText = React.createClass({
-  render: function() {
-    return (
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-      </p>
-    );
-  }
-});
 var CheckMark = React.createClass({
   render: function() {
     return (
@@ -17,29 +7,10 @@ var CheckMark = React.createClass({
     );
   }
 });
-var Description = React.createClass({
-  render: function() {
-    return (
-      <p>
-        A collection of add-ons to superchange your account such as Dropbox,
-        Google Drive + more.
-      </p>
-    );
-  }
-});
 var Divider = React.createClass({
   render: function() {
     return (
       <div className="divider"></div>
-    );
-  }
-});
-var Title = React.createClass({
-  render: function() {
-    return (
-      <h1>
-        Add-ons
-      </h1>
     );
   }
 });
@@ -53,6 +24,24 @@ var InstallCounter = React.createClass({
           <i className="fa fa-thumbs-o-up"></i>
         </div>
       </div>
+    );
+  }
+});
+var Paragraph = React.createClass({
+  render: function() {
+    return (
+      <p>
+        {this.props.data}
+      </p>
+    );
+  }
+});
+var Title = React.createClass({
+  render: function() {
+    return (
+      <h1>
+        Add-ons
+      </h1>
     );
   }
 });
@@ -157,13 +146,13 @@ var App = React.createClass({
         <div id="add-ons" className={this.state.addonState}>
           <Title />
           <CheckMark />
-          <Description />
+          <Paragraph data='A collection of add-ons to superchange your account such as Dropbox, Google Drive + more.' />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>
         <Divider />
         <div id="installs-number">
           <InstallCounter data={this.state.data} />
-          <AdText />
+          <Paragraph data='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.' />
         </div>
       </div>
     );

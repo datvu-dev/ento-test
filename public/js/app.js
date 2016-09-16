@@ -75,13 +75,13 @@ var App = React.createClass({
         <div id="add-ons" className={this.state.addonState}>
           <Title />
           <CheckMark />
-          <Description />
+          <Paragraph data='A collection of add-ons to superchange your account such as Dropbox, Google Drive + more.' />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>
         <Divider />
         <div id="installs-number">
           <InstallCounter data={this.state.data} />
-          <AdText />
+          <Paragraph data='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.' />
         </div>
       </div>
     );
