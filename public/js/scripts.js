@@ -17,12 +17,9 @@ var Divider = React.createClass({
 var InstallCounter = React.createClass({
   render: function() {
     return (
-      <div>
-        <h2>Number of installs</h2>
-        <div id="counter">
-          <span>{this.props.data}</span>
-          <i className="fa fa-thumbs-o-up"></i>
-        </div>
+      <div id="counter">
+        <span>{this.props.data}</span>
+        <i className="fa fa-thumbs-o-up"></i>
       </div>
     );
   }
@@ -33,15 +30,6 @@ var Paragraph = React.createClass({
       <p>
         {this.props.data}
       </p>
-    );
-  }
-});
-var Title = React.createClass({
-  render: function() {
-    return (
-      <h1>
-        Add-ons
-      </h1>
     );
   }
 });
@@ -144,13 +132,14 @@ var App = React.createClass({
     return (
       <div>
         <div id="add-ons" className={this.state.addonState}>
-          <Title />
+          <h1>Add-ons</h1>
           <CheckMark />
           <Paragraph data='A collection of add-ons to superchange your account such as Dropbox, Google Drive + more.' />
           <ToggleSwitch handleUpdate={this.updateInstallsNumber} />
         </div>
         <Divider />
         <div id="installs-number">
+          <h2>Number of installs</h2>
           <InstallCounter data={this.state.data} />
           <Paragraph data='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.' />
         </div>
