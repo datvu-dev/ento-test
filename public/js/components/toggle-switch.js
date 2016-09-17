@@ -1,5 +1,6 @@
 var ToggleSwitch = React.createClass({
-  handleToggle: function() {
+  handleToggle: function(e) {
+    $(e.target).attr('disabled', true);
     this.props.handleUpdate();
   },
   getInitialState: function() {

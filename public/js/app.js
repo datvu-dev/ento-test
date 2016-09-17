@@ -37,6 +37,9 @@ var App = React.createClass({
         // update the state of installation of add-ons.
         localStorage.setItem('add-ons', newState);
         this.setState({addonState: localStorage.getItem('add-ons')});
+
+        // enable checkbox.
+        $('.switch input').removeAttr('disabled');
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.route.url, status, err.toString());
